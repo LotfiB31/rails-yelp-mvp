@@ -6,3 +6,11 @@
 <p><%= @restaurant.category%></p>
 <p><%= @restaurant.phone_number%></p>
 
+<h3>Avis:</h3>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+  <li><%= review.content %>: <%= review.rating %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Ajouter un avis ➕', new_restaurant_review_path(@restaurant) %>
